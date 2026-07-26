@@ -716,7 +716,7 @@ app.get('/auth', async (req, res) => {
   }
 });
 
-// OAuth: Step 2 - Callback
+// OAuth: Step 2 - Callback (Shopify Managed Installation Flow)
 app.get('/auth/callback', async (req, res) => {
   try {
     const callbackResponse = await shopify.auth.callback({
@@ -724,15 +724,198 @@ app.get('/auth/callback', async (req, res) => {
       rawResponse: res,
     });
 
-    const { session } = callbackResponse;
-    console.log('App Installed Successfully!');
-    console.log('Offline Access Token:', session.accessToken);
-    console.log('Save this access token to query the Shopify API.');
+    const { session: newSession } = callbackResponse;
+    const newToken = newSession.accessToken;
+
+    console.log('✅ App Installed / Re-authenticated Successfully!');
+    console.log('🔑 New Exchanged Offline Access Token:', newToken);
     
-    res.send('App installed successfully! Check the server logs for the access token.');
+    // Update process.env runtime token
+    process.env.SHOPIFY_ACCESS_TOKEN = newToken;
+
+    // Persist new token to .env file
+    try {
+      const envPath = path.join(__dirname, '.env');
+      if (fs.existsSync(envPath)) {
+        let envContent = fs.readFileSync(envPath, 'utf8');
+        if (envContent.includes('SHOPIFY_ACCESS_TOKEN=')) {
+          envContent = envContent.replace(/SHOPIFY_ACCESS_TOKEN=.*/, `SHOPIFY_ACCESS_TOKEN=${newToken}`);
+        } else {
+          envContent += `\nSHOPIFY_ACCESS_TOKEN=${newToken}\n`;
+        }
+        fs.writeFileSync(envPath, envContent);
+        console.log('💾 Updated SHOPIFY_ACCESS_TOKEN in .env file!');
+      }
+    } catch (e) {
+      console.error('Error saving token to .env:', e.message);
+    }
+
+    res.send(`
+      <div style="font-family: system-ui; max-width: 600px; margin: 50px auto; padding: 30px; border-radius: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534;">
+        <h2>🎉 Shopify Authentication Successful!</h2>
+        <p>Your app has successfully exchanged tokens and authenticated with <strong>${newSession.shop}</strong>.</p>
+        <p><strong>Access Token Exchanged & Saved!</strong></p>
+        <p><a href="/" style="display: inline-block; padding: 10px 20px; background: #16a34a; color: white; border-radius: 6px; text-decoration: none; font-weight: bold;">Return to Dashboard</a></p>
+      </div>
+    `);
   } catch (error) {
     console.error('Error in OAuth callback:', error);
     res.status(500).send(error.message);
+  }
+});
+
+// Endpoint: Token Exchange for Managed Installation (Shopify 2026 Flow)
+app.post('/auth/token-exchange', async (req, res) => {
+  try {
+    const { subject_token, shop } = req.body;
+    const targetShop = shop || process.env.SHOP_URL;
+
+    if (!subject_token) {
+      return res.status(400).json({ error: 'Missing subject_token for token exchange' });
+    }
+
+    console.log(`🔄 Performing Shopify Token Exchange for shop: ${targetShop}...`);
+
+    const payload = JSON.stringify({
+      client_id: process.env.SHOPIFY_API_KEY,
+      client_secret: process.env.SHOPIFY_API_SECRET,
+      grant_type: 'urn:ietf:params:oauth:grant-type:token-exchange',
+      subject_token: subject_token,
+      subject_token_type: 'urn:ietf:params:oauth:token-type:id_token',
+      requested_token_type: 'urn:shopify:params:oauth:token-type:offline-access-token'
+    });
+
+    const options = {
+      hostname: targetShop,
+      path: '/admin/oauth/access_token',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Content-Length': Buffer.byteLength(payload)
+      }
+    };
+
+    const https = require('https');
+    const exchangeReq = https.request(options, (exchangeRes) => {
+      let body = '';
+      exchangeRes.on('data', chunk => body += chunk);
+      exchangeRes.on('end', () => {
+        try {
+          const data = JSON.parse(body);
+          if (exchangeRes.statusCode === 200 && data.access_token) {
+            console.log('✅ Token Exchange Successful! New Token:', data.access_token);
+            process.env.SHOPIFY_ACCESS_TOKEN = data.access_token;
+            
+            // Persist to .env
+            const envPath = path.join(__dirname, '.env');
+            if (fs.existsSync(envPath)) {
+              let envContent = fs.readFileSync(envPath, 'utf8');
+              envContent = envContent.replace(/SHOPIFY_ACCESS_TOKEN=.*/, `SHOPIFY_ACCESS_TOKEN=${data.access_token}`);
+              fs.writeFileSync(envPath, envContent);
+            }
+            return res.json({ success: true, access_token: data.access_token, scope: data.scope });
+          } else {
+            console.error('❌ Token exchange rejected by Shopify:', data);
+            return res.status(exchangeRes.statusCode).json(data);
+          }
+        } catch (e) {
+          return res.status(500).json({ error: 'Failed to parse Shopify response', raw: body });
+        }
+      });
+    });
+
+    exchangeReq.on('error', err => {
+      console.error('Token exchange HTTP error:', err.message);
+      res.status(500).json({ error: err.message });
+    });
+
+    exchangeReq.write(payload);
+    exchangeReq.end();
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Endpoint: Bulk Update Collection Descriptions & SEO
+app.post('/api/collections/bulk-update-descriptions', async (req, res) => {
+  try {
+    const { collections } = req.body;
+    if (!collections || !Array.isArray(collections)) {
+      return res.status(400).json({ error: 'Expected "collections" array in request body' });
+    }
+
+    console.log(`🚀 Starting Bulk Collection Description Update for ${collections.length} collections...`);
+    const results = [];
+
+    // Re-initialize active session client with current process.env.SHOPIFY_ACCESS_TOKEN
+    const activeSession = new Session({
+      id: `offline_${process.env.SHOP_URL}`,
+      shop: process.env.SHOP_URL,
+      state: 'offline',
+      isOnline: false,
+      accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+    });
+    const activeClient = new shopify.clients.Graphql({ session: activeSession });
+
+    const UPDATE_COLLECTION_MUTATION = `
+      mutation collectionUpdate($input: CollectionInput!) {
+        collectionUpdate(input: $input) {
+          collection {
+            id
+            title
+            handle
+          }
+          userErrors {
+            field
+            message
+          }
+        }
+      }
+    `;
+
+    for (let i = 0; i < collections.length; i++) {
+      const item = collections[i];
+      const gid = item.id.toString().startsWith('gid://') ? item.id : `gid://shopify/Collection/${item.id}`;
+      console.log(`\n[${i + 1}/${collections.length}] Updating "${item.title || item.handle}" (${gid})...`);
+
+      const input = {
+        id: gid,
+        descriptionHtml: `<p>${item.description}</p>`
+      };
+
+      if (item.seoTitle || item.seoMetaDescription) {
+        input.seo = {};
+        if (item.seoTitle) input.seo.title = item.seoTitle;
+        if (item.seoMetaDescription) input.seo.description = item.seoMetaDescription;
+      }
+
+      try {
+        const response = await activeClient.request(UPDATE_COLLECTION_MUTATION, {
+          variables: { input }
+        });
+
+        const userErrors = response.data?.collectionUpdate?.userErrors || [];
+        if (userErrors.length > 0) {
+          console.error(`❌ Errors for ${item.handle}:`, userErrors);
+          results.push({ handle: item.handle, status: 'error', errors: userErrors });
+        } else {
+          console.log(`✅ Successfully updated "${item.title || item.handle}"`);
+          results.push({ handle: item.handle, status: 'success' });
+        }
+      } catch (err) {
+        console.error(`❌ Exception for ${item.handle}:`, err.message);
+        results.push({ handle: item.handle, status: 'failed', message: err.message });
+      }
+
+      // Rate limit safety delay (800ms)
+      await new Promise(r => setTimeout(r, 800));
+    }
+
+    return res.json({ success: true, total: collections.length, results });
+  } catch (err) {
+    console.error('Fatal error in bulk collection update:', err);
+    res.status(500).json({ error: err.message });
   }
 });
 
@@ -740,5 +923,6 @@ app.listen(PORT, async () => {
   await initDb();
   console.log(`Server is running on port ${PORT}`);
   console.log(`Webhook endpoint: http://localhost:${PORT}/webhooks/products-create`);
-  console.log(`To install the app, navigate to: http://localhost:${PORT}/auth?shop=${process.env.SHOP_URL}`);
+  console.log(`To install/re-authenticate the app, navigate to: http://localhost:${PORT}/auth?shop=${process.env.SHOP_URL}`);
 });
+
