@@ -919,6 +919,52 @@ app.post('/api/collections/bulk-update-descriptions', async (req, res) => {
   }
 });
 
+// Webhook for product creation (Auto-Tagging)
+app.post('/webhooks/products-create', verifyShopifyWebhook, async (req, res) => {
+  res.status(200).send('OK'); // Immediately respond to Shopify to prevent timeouts
+
+  try {
+    const product = req.body;
+    const title = (product.title || '').toLowerCase();
+    const tagsStr = (product.tags || '').toLowerCase();
+    const productId = \`gid://shopify/Product/\${product.id}\`;
+
+    const landCruiserKeywords = [
+      'landcruiser', 'land cruiser', 'prado', 'fj cruiser',
+      '40 series', '45 series', '47 series',
+      '60 series', '70 series', '73 series', '75 series', '76 series', '78 series', '79 series', 
+      '80 series', '100 series', '105 series', '200 series', '300 series',
+      'hzj', 'vdj', 'fzj', 'hdj'
+    ];
+
+    let isLC = false;
+    if (landCruiserKeywords.some(kw => title.includes(kw) || tagsStr.includes(kw))) {
+      isLC = true;
+    }
+
+    const tagToAdd = isLC ? 'Land-Cruiser-ad' : 'Other-4WD-ad';
+
+    const mutation = \`
+      mutation tagsAdd($id: ID!, $tags: [String!]!) {
+        tagsAdd(id: $id, tags: $tags) {
+          userErrors { field message }
+        }
+      }
+    \`;
+
+    const response = await client.request(mutation, { variables: { id: productId, tags: [tagToAdd] } });
+    const errors = response.data.tagsAdd.userErrors;
+
+    if (errors && errors.length > 0) {
+      console.error(\`[Webhook] ❌ Error auto-tagging product \${product.id}:\`, errors);
+    } else {
+      console.log(\`[Webhook] ✅ Automatically tagged new product \${product.id} with \${tagToAdd}\`);
+    }
+  } catch (error) {
+    console.error(\`[Webhook] ❌ Exception auto-tagging product:\`, error.message);
+  }
+});
+
 app.listen(PORT, async () => {
   await initDb();
   console.log(`Server is running on port ${PORT}`);

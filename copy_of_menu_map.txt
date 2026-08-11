@@ -1,0 +1,453 @@
+# Suggestion Grid Collections Mapping Chart
+
+This chart maps each parent and sub-collection menu option to the corresponding collection options that should appear in its **Suggestion Grid** (sub-navigation grid) on the storefront.
+
+## 🚗 Shop by Vehicle suggestion map
+
+### Parent: **Toyota**
+*On the **Toyota** parent collection page, show the vehicle-specific collections under it:*
+*   **Landcruiser 75 Series** (Handle: `75-series`)
+*   **Landcruiser 79 Series** (Handle: `79-series`)
+*   **Landcruiser 60 Series** (Handle: `60-series`)
+*   **Landcruiser 40 Series** (Handle: `40-series`)
+*   **Landcruiser 80 Series** (Handle: `80-series`)
+*   **Hilux N70** (Handle: `hilux-n70`)
+*   **Hilux N80** (Handle: `hilux-n80`)
+
+#### Sub-Collection: **Landcruiser 75 Series**
+*On this vehicle collection page, show the category collections specific to **Landcruiser 75 Series**:*
+*   **75 Series Accessories** (Handle: `75-series-accessories` | Products: 3)
+*   **75 Series Bonnets** (Handle: `75-series-bonnets` | Products: 2)
+*   **75 Series Cabins & Supports** (Handle: `75-series-cabins-supports` | Products: 2)
+*   **75 Series differentials and lockers** (Handle: `75-series-differentials-and-lockers` | Products: 2)
+*   **75 Series EFS** (Handle: `75-series-efs` | Products: 2)
+*   **75 Series Fulcrum** (Handle: `75-series-fulcrum` | Products: 1)
+*   **75 Series Guards & Supports** (Handle: `75-series-guards-supports` | Products: 5)
+*   **75 Series Parts** (Handle: `75-series-parts` | Products: 23)
+*   **75 Series Suspension** (Handle: `75-series-suspension` | Products: 0)
+*   **75 Series Tail Lights** (Handle: `75-series-tail-lights` | Products: 1)
+*   **75 Series tub** (Handle: `75-series-tub` | Products: 1)
+*   **75 Series Westralia Springs** (Handle: `75-series-westralia-springs` | Products: 1)
+
+#### Sub-Collection: **Landcruiser 79 Series**
+*On this vehicle collection page, show the category collections specific to **Landcruiser 79 Series**:*
+*   **79 Series 12V Lighting** (Handle: `79-series-12v-lighting` | Products: 3)
+*   **79 Series Accessories** (Handle: `79-series-accessories` | Products: 13)
+*   **79 Series Bilstein** (Handle: `79-series-bilstein` | Products: 1)
+*   **79 Series Bonnets** (Handle: `79-series-bonnets-1` | Products: 1)
+*   **79 Series Cabins & Supports** (Handle: `79-series-cabins-supports` | Products: 2)
+*   **79 Series Doors** (Handle: `79-series-doors-1` | Products: 5)
+*   **79 Series EFS** (Handle: `79-series-efs` | Products: 6)
+*   **79 Series Fulcrum** (Handle: `79-series-fulcrum` | Products: 5)
+*   **79 Series Grilles** (Handle: `79-series-grilles` | Products: 7)
+*   **79 Series Guards & Supports** (Handle: `79-series-guards-supports` | Products: 5)
+*   **79 Series Headlights** (Handle: `79-series-headlights` | Products: 4)
+*   **79 Series Lighting** (Handle: `79-series-lighting` | Products: 0)
+*   **79 Series Parts** (Handle: `79-series-parts` | Products: 57)
+*   **79 Series Suspension** (Handle: `79-series-suspension-1` | Products: 1)
+*   **79 Series Tail Lights** (Handle: `79-series-tail-lights` | Products: 2)
+*   **79 Series Tubs** (Handle: `79-series-tubs` | Products: 2)
+*   **79 Series Westralia Springs** (Handle: `79-series-westralia-springs` | Products: 1)
+
+#### Sub-Collection: **Landcruiser 60 Series**
+*On this vehicle collection page, show the category collections specific to **Landcruiser 60 Series**:*
+*   **60 Series Bonnets** (Handle: `60-series-bonnets-1` | Products: 1)
+*   **60 Series Cabins & Supports** (Handle: `60-series-cabins-supports` | Products: 2)
+*   **60 Series Doors** (Handle: `60-series-doors-1` | Products: 4)
+*   **60 Series Grilles** (Handle: `60-series-grilles` | Products: 0)
+*   **60 Series Guards & Supports** (Handle: `60-series-guards-supports` | Products: 2)
+*   **60 Series Guards and Supports** (Handle: `60-series-guards-and-supports` | Products: 2)
+*   **60 Series Lighting** (Handle: `60-series-lighting-1` | Products: 0)
+*   **60 Series Parts** (Handle: `60-series-parts` | Products: 10)
+*   **60 Series Suspension** (Handle: `60-series-suspension-1` | Products: 0)
+
+#### Sub-Collection: **Landcruiser 40 Series**
+*On this vehicle collection page, show the category collections specific to **Landcruiser 40 Series**:*
+*   **40 Series bonnets** (Handle: `40-series-bonnets` | Products: 1)
+*   **40 Series Cabin & Support** (Handle: `40-series-cabin-support-1` | Products: 44)
+*   **40 Series Doors** (Handle: `40-series-doors` | Products: 11)
+*   **40 Series Grilles** (Handle: `40-series-grilles` | Products: 1)
+*   **40 Series Guards & Supports** (Handle: `40-series-guards-supports` | Products: 7)
+*   **40 Series Lighting** (Handle: `40-series-headlight` | Products: 2)
+*   **40 Series Parts** (Handle: `40-series-parts` | Products: 70)
+*   **40 Series UHF Radios** (Handle: `40-series-uhf-radios` | Products: 1)
+
+#### Sub-Collection: **Landcruiser 80 Series**
+*On this vehicle collection page, show the category collections specific to **Landcruiser 80 Series**:*
+*   **80 Series Guards & Supports** (Handle: `80-series-guards-supports` | Products: 2)
+*   **80 Series Parts** (Handle: `80-series-parts` | Products: 3)
+
+#### Sub-Collection: **Hilux N70**
+*On this vehicle collection page, show the category collections specific to **Hilux N70**:*
+*   **70 Series 12V Lighting** (Handle: `70-series-12v-lighting` | Products: 5)
+*   **70 Series Accessories** (Handle: `70-series-accessories` | Products: 35)
+*   **70 Series Bonnets** (Handle: `70-series-bonnets-1` | Products: 0)
+*   **70 Series Cabins & Supports** (Handle: `70-series-cabins-supports` | Products: 12)
+*   **70 Series Doors** (Handle: `70-series-doors` | Products: 5)
+*   **70 Series Guards & Supports** (Handle: `70-series-guards-supports-1` | Products: 1)
+*   **70 Series Lighting** (Handle: `70-series-lighting` | Products: 0)
+*   **70 Series Parts** (Handle: `70-series-parts` | Products: 59)
+*   **70 Series Suspension** (Handle: `70-series-suspension-1` | Products: 0)
+*   **70 Series Tubs** (Handle: `70-series-tubs` | Products: 1)
+
+#### Sub-Collection: **Hilux N80**
+*On this vehicle collection page, show the category collections specific to **Hilux N80**:*
+*   **80 Series Guards & Supports** (Handle: `80-series-guards-supports` | Products: 2)
+*   **80 Series Parts** (Handle: `80-series-parts` | Products: 3)
+
+### Parent: **Ford**
+*On the **Ford** parent collection page, show the vehicle-specific collections under it:*
+*   **Ranger** (Handle: `ranger`)
+
+#### Sub-Collection: **Ranger**
+*On this vehicle collection page, show the category collections specific to **Ranger**:*
+*   **Ranger Parts** (Handle: `ranger` | Products: 1)
+
+### Parent: **Isuzu**
+*On the **Isuzu** parent collection page, show the vehicle-specific collections under it:*
+*   **D Max** (Handle: `d-max`)
+
+#### Sub-Collection: **D Max**
+*On this vehicle collection page, show the category collections specific to **D Max**:*
+*   *(No specific sub-collections found in store for this vehicle yet)*
+
+### Parent: **Mahindra**
+*On the **Mahindra** parent collection page, show the vehicle-specific collections under it:*
+*   **Pick Up** (Handle: `pick-up`)
+
+#### Sub-Collection: **Pick Up**
+*On this vehicle collection page, show the category collections specific to **Pick Up**:*
+*   **Mahindra Pick Up** (Handle: `mahindra-pick-up` | Products: 1)
+
+### Parent: **Mitsubishi**
+*On the **Mitsubishi** parent collection page, show the vehicle-specific collections under it:*
+*   **Triton** (Handle: `triton`)
+
+#### Sub-Collection: **Triton**
+*On this vehicle collection page, show the category collections specific to **Triton**:*
+*   **Triton parts** (Handle: `triton-parts` | Products: 1)
+
+
+---
+
+## 🛠️ Shop by Category suggestion map
+
+### Parent: **Toyota Landcruiser**
+*On the **Toyota Landcruiser** parent category page, show the sub-categories under it:*
+*   **Landcruiser Doors** (Handle: `landcruiser-doors`)
+*   **Landcruiser Cabin** (Handle: `landcruiser-cabin`)
+*   **Landcruiser Bonnets** (Handle: `landcruiser-bonnets`)
+*   **Landcruiser Guards & Supports** (Handle: `landcruiser-guards-supports`)
+*   **Landcruiser Tubs** (Handle: `landcruiser-tubs`)
+*   **Landcruiser Grilles** (Handle: `landcruiser-grilles`)
+*   **Landcruiser Suspension** (Handle: `landcruiser-suspension`)
+*   **Landcruiser Differentials & Lockers** (Handle: `landcruiser-differentials-lockers`)
+*   **Landcruiser Lighting** (Handle: `landcruiser-lighting`)
+*   **LandCruiser Accessories** (Handle: `landcruiser-accessories`)
+
+#### Sub-Collection: **Landcruiser Doors**
+*On this collection page, show the following options in the suggestion grid:*
+*   **40 Series Doors** (Handle: `40-series-doors` | Products: 11)
+*   **60 Series Doors** (Handle: `60-series-doors-1` | Products: 4)
+*   **70 Series Doors** (Handle: `70-series-doors` | Products: 5)
+*   **73 Series Doors** (Handle: `73-series-doors` | Products: 2)
+*   **76 Series Doors** (Handle: `76-series-doors` | Products: 5)
+*   **79 Series Doors** (Handle: `79-series-doors-1` | Products: 5)
+*   **Doors** (Handle: `doors` | Products: 41)
+*   **LANDCRUISER DOORS** (Handle: `door` | Products: 55)
+
+#### Sub-Collection: **Landcruiser Cabin**
+*On this collection page, show the following options in the suggestion grid:*
+*   **40 Series Cabin & Support** (Handle: `40-series-cabin-support-1` | Products: 44)
+*   **60 Series Cabins & Supports** (Handle: `60-series-cabins-supports` | Products: 2)
+*   **70 Series Cabins & Supports** (Handle: `70-series-cabins-supports` | Products: 12)
+*   **73 Series Cabins & Supports** (Handle: `73-series-cabins-supports` | Products: 2)
+*   **75 Series Cabins & Supports** (Handle: `75-series-cabins-supports` | Products: 2)
+*   **78 Series Cabin & Support** (Handle: `78-series-cabin-support` | Products: 1)
+*   **79 Series Cabins & Supports** (Handle: `79-series-cabins-supports` | Products: 2)
+*   **Cabins & Supports** (Handle: `cabins-supports` | Products: 70)
+*   **LANDCRUISER CABIN** (Handle: `cabin` | Products: 93)
+
+#### Sub-Collection: **Landcruiser Bonnets**
+*On this collection page, show the following options in the suggestion grid:*
+*   **40 Series bonnets** (Handle: `40-series-bonnets` | Products: 1)
+*   **60 Series Bonnets** (Handle: `60-series-bonnets-1` | Products: 1)
+*   **70 Series Bonnets** (Handle: `70-series-bonnets-1` | Products: 0)
+*   **75 Series Bonnets** (Handle: `75-series-bonnets` | Products: 2)
+*   **79 Series Bonnets** (Handle: `79-series-bonnets-1` | Products: 1)
+*   **Bonnets** (Handle: `bonnets-1` | Products: 6)
+
+#### Sub-Collection: **Landcruiser Guards & Supports**
+*On this collection page, show the following options in the suggestion grid:*
+*   **40 Series Guards & Supports** (Handle: `40-series-guards-supports` | Products: 7)
+*   **60 Series Guards & Supports** (Handle: `60-series-guards-supports` | Products: 2)
+*   **70 Series Guards & Supports** (Handle: `70-series-guards-supports-1` | Products: 1)
+*   **75 Series Guards & Supports** (Handle: `75-series-guards-supports` | Products: 5)
+*   **79 Series Guards & Supports** (Handle: `79-series-guards-supports` | Products: 5)
+*   **80 Series Guards & Supports** (Handle: `80-series-guards-supports` | Products: 2)
+*   **Guards & Supports** (Handle: `guards-supports` | Products: 22)
+
+#### Sub-Collection: **Landcruiser Tubs**
+*On this collection page, show the following options in the suggestion grid:*
+*   **70 Series Tubs** (Handle: `70-series-tubs` | Products: 1)
+*   **79 Series Tubs** (Handle: `79-series-tubs` | Products: 2)
+*   **Tubs** (Handle: `tubs-2` | Products: 3)
+
+#### Sub-Collection: **Landcruiser Grilles**
+*   *(No specific suggestion sub-collections found in store yet)*
+
+#### Sub-Collection: **Landcruiser Suspension**
+*On this collection page, show the following options in the suggestion grid:*
+*   **60 Series Suspension** (Handle: `60-series-suspension-1` | Products: 0)
+*   **70 Series Suspension** (Handle: `70-series-suspension-1` | Products: 0)
+*   **75 Series Suspension** (Handle: `75-series-suspension` | Products: 0)
+*   **79 Series Suspension** (Handle: `79-series-suspension-1` | Products: 1)
+*   **LANDCRUISER SUSPENSION** (Handle: `suspension` | Products: 9)
+*   **Suspension** (Handle: `suspension-1` | Products: 18)
+
+#### Sub-Collection: **Landcruiser Differentials & Lockers**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Differentials & Lockers** (Handle: `differentials-lockers` | Products: 2)
+
+#### Sub-Collection: **Landcruiser Lighting**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Lighting** (Handle: `12v-lighting` | Products: 10)
+*   **40 Series Lighting** (Handle: `40-series-headlight` | Products: 2)
+*   **60 Series Lighting** (Handle: `60-series-lighting-1` | Products: 0)
+*   **70 Series 12V Lighting** (Handle: `70-series-12v-lighting` | Products: 5)
+*   **70 Series Lighting** (Handle: `70-series-lighting` | Products: 0)
+*   **76 Series 12V Lighting** (Handle: `76-series-12v-lighting` | Products: 0)
+*   **76 Series Lighting** (Handle: `76-series-lighting` | Products: 0)
+*   **78 Series 12V Lighting** (Handle: `78-series-12v-lighting` | Products: 0)
+*   **79 Series 12V Lighting** (Handle: `79-series-12v-lighting` | Products: 3)
+*   **79 Series Lighting** (Handle: `79-series-lighting` | Products: 0)
+*   **Lighting** (Handle: `lighting-1` | Products: 14)
+
+#### Sub-Collection: **LandCruiser Accessories**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Accessories** (Handle: `12v-accessories` | Products: 50)
+*   **200 Series Accessories** (Handle: `200-series-accessories` | Products: 3)
+*   **300 Series Accessories** (Handle: `300-series-accessories` | Products: 3)
+*   **70 Series Accessories** (Handle: `70-series-accessories` | Products: 35)
+*   **75 Series Accessories** (Handle: `75-series-accessories` | Products: 3)
+*   **76 Series Accessories** (Handle: `76-series-accessories` | Products: 10)
+*   **78 Series Accessories** (Handle: `78-series-accessories` | Products: 4)
+*   **79 Series Accessories** (Handle: `79-series-accessories` | Products: 13)
+*   **Cooling Accessories** (Handle: `cooling-accessories` | Products: 7)
+*   **LandCruiser Accessories** (Handle: `landcruiser-accessories` | Products: 61)
+*   **Winch Accessories** (Handle: `winch-accessories` | Products: 0)
+
+### Parent: **Power & 12V**
+*On the **Power & 12V** parent category page, show the sub-categories under it:*
+*   **12V Accessories** (Handle: `12v-accessories`)
+*   **Batteries** (Handle: `batteries`)
+*   **Solar & Power** (Handle: `solar-and-power`)
+*   **12V Lighting** (Handle: `12v-lighting`)
+*   **UHF Radios** (Handle: `uhf-radios`)
+*   **Throttle Controllers** (Handle: `throttle-controllers`)
+
+#### Sub-Collection: **12V Accessories**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Batteries** (Handle: `batteries` | Products: 0)
+*   **Solar & Power** (Handle: `solar-power` | Products: 1)
+*   **12V Lighting** (Handle: `12v-lighting` | Products: 10)
+*   **UHF Radios** (Handle: `uhf-radios` | Products: 12)
+*   **Throttle Controllers** (Handle: `throttle-controllers` | Products: 3)
+
+#### Sub-Collection: **Batteries**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Accessories** (Handle: `12v-accessories` | Products: 50)
+*   **Solar & Power** (Handle: `solar-power` | Products: 1)
+*   **12V Lighting** (Handle: `12v-lighting` | Products: 10)
+*   **UHF Radios** (Handle: `uhf-radios` | Products: 12)
+*   **Throttle Controllers** (Handle: `throttle-controllers` | Products: 3)
+
+#### Sub-Collection: **Solar & Power**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Accessories** (Handle: `12v-accessories` | Products: 50)
+*   **Batteries** (Handle: `batteries` | Products: 0)
+*   **12V Lighting** (Handle: `12v-lighting` | Products: 10)
+*   **UHF Radios** (Handle: `uhf-radios` | Products: 12)
+*   **Throttle Controllers** (Handle: `throttle-controllers` | Products: 3)
+
+#### Sub-Collection: **12V Lighting**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Accessories** (Handle: `12v-accessories` | Products: 50)
+*   **Batteries** (Handle: `batteries` | Products: 0)
+*   **Solar & Power** (Handle: `solar-power` | Products: 1)
+*   **UHF Radios** (Handle: `uhf-radios` | Products: 12)
+*   **Throttle Controllers** (Handle: `throttle-controllers` | Products: 3)
+
+#### Sub-Collection: **UHF Radios**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Accessories** (Handle: `12v-accessories` | Products: 50)
+*   **Batteries** (Handle: `batteries` | Products: 0)
+*   **Solar & Power** (Handle: `solar-power` | Products: 1)
+*   **12V Lighting** (Handle: `12v-lighting` | Products: 10)
+*   **Throttle Controllers** (Handle: `throttle-controllers` | Products: 3)
+
+#### Sub-Collection: **Throttle Controllers**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Accessories** (Handle: `12v-accessories` | Products: 50)
+*   **Batteries** (Handle: `batteries` | Products: 0)
+*   **Solar & Power** (Handle: `solar-power` | Products: 1)
+*   **12V Lighting** (Handle: `12v-lighting` | Products: 10)
+*   **UHF Radios** (Handle: `uhf-radios` | Products: 12)
+
+### Parent: **Recovery & Air**
+*On the **Recovery & Air** parent category page, show the sub-categories under it:*
+*   **Winches** (Handle: `winches`)
+*   **Recovery Gear** (Handle: `recovery-gear`)
+*   **Air Compressors** (Handle: `air-compressors`)
+
+#### Sub-Collection: **Winches**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Recovery Gear** (Handle: `recovery-gear` | Products: 9)
+*   **Air Compressors** (Handle: `air-compressors` | Products: 1)
+
+#### Sub-Collection: **Recovery Gear**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Winches** (Handle: `winches` | Products: 8)
+*   **Air Compressors** (Handle: `air-compressors` | Products: 1)
+
+#### Sub-Collection: **Air Compressors**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Winches** (Handle: `winches` | Products: 8)
+*   **Recovery Gear** (Handle: `recovery-gear` | Products: 9)
+
+### Parent: **Suspension**
+*On the **Suspension** parent category page, show the sub-categories under it:*
+*   **EFS** (Handle: `efs`)
+*   **Westralia Springs** (Handle: `westralia-springs`)
+*   **Fulcrum** (Handle: `fulcrum`)
+*   **Bilstein** (Handle: `bilstein`)
+
+#### Sub-Collection: **EFS**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Westralia Springs** (Handle: `westralia-springs` | Products: 2)
+*   **Fulcrum** (Handle: `fulcrum` | Products: 6)
+*   **Bilstein** (Handle: `bilstein` | Products: 1)
+
+#### Sub-Collection: **Westralia Springs**
+*On this collection page, show the following options in the suggestion grid:*
+*   **EFS** (Handle: `efs` | Products: 9)
+*   **Fulcrum** (Handle: `fulcrum` | Products: 6)
+*   **Bilstein** (Handle: `bilstein` | Products: 1)
+
+#### Sub-Collection: **Fulcrum**
+*On this collection page, show the following options in the suggestion grid:*
+*   **EFS** (Handle: `efs` | Products: 9)
+*   **Westralia Springs** (Handle: `westralia-springs` | Products: 2)
+*   **Bilstein** (Handle: `bilstein` | Products: 1)
+
+#### Sub-Collection: **Bilstein**
+*On this collection page, show the following options in the suggestion grid:*
+*   **EFS** (Handle: `efs` | Products: 9)
+*   **Westralia Springs** (Handle: `westralia-springs` | Products: 2)
+*   **Fulcrum** (Handle: `fulcrum` | Products: 6)
+
+### Parent: **Camping & Touring**
+*On the **Camping & Touring** parent category page, show the sub-categories under it:*
+*   **Roof Top Tents & Awnings** (Handle: `roof-top-tents-awnings`)
+*   **Camping Equipment** (Handle: `camping-equipment`)
+*   **Tents** (Handle: `tents`)
+*   **Swags** (Handle: `swags`)
+
+#### Sub-Collection: **Roof Top Tents & Awnings**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Camping Equipment** (Handle: `camping-equipment` | Products: 1)
+*   **Tents** (Handle: `tents` | Products: 0)
+*   **Swags** (Handle: `swags` | Products: 0)
+
+#### Sub-Collection: **Camping Equipment**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Roof Top Tents & Awnings** (Handle: `roof-top-tents-awnings` | Products: 0)
+*   **Tents** (Handle: `tents` | Products: 0)
+*   **Swags** (Handle: `swags` | Products: 0)
+
+#### Sub-Collection: **Tents**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Roof Top Tents & Awnings** (Handle: `roof-top-tents-awnings` | Products: 0)
+*   **Camping Equipment** (Handle: `camping-equipment` | Products: 1)
+*   **Swags** (Handle: `swags` | Products: 0)
+
+#### Sub-Collection: **Swags**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Roof Top Tents & Awnings** (Handle: `roof-top-tents-awnings` | Products: 0)
+*   **Camping Equipment** (Handle: `camping-equipment` | Products: 1)
+*   **Tents** (Handle: `tents` | Products: 0)
+
+### Parent: **Fridges & Cooling**
+*On the **Fridges & Cooling** parent category page, show the sub-categories under it:*
+*   **12V Fridges** (Handle: `12v-fridges`)
+*   **Fridge Freezers** (Handle: `fridge-freezers`)
+*   **Fans** (Handle: `fans`)
+*   **Cooling Accessories** (Handle: `cooling-accessories`)
+
+#### Sub-Collection: **12V Fridges**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Fridge Freezers** (Handle: `fridge-freezers-1` | Products: 5)
+*   **Fans** (Handle: `fans` | Products: 0)
+*   **Cooling Accessories** (Handle: `cooling-accessories` | Products: 7)
+
+#### Sub-Collection: **Fridge Freezers**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Fridges** (Handle: `12v-fridges` | Products: 5)
+*   **Fans** (Handle: `fans` | Products: 0)
+*   **Cooling Accessories** (Handle: `cooling-accessories` | Products: 7)
+
+#### Sub-Collection: **Fans**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Fridges** (Handle: `12v-fridges` | Products: 5)
+*   **Fridge Freezers** (Handle: `fridge-freezers-1` | Products: 5)
+*   **Cooling Accessories** (Handle: `cooling-accessories` | Products: 7)
+
+#### Sub-Collection: **Cooling Accessories**
+*On this collection page, show the following options in the suggestion grid:*
+*   **12V Fridges** (Handle: `12v-fridges` | Products: 5)
+*   **Fridge Freezers** (Handle: `fridge-freezers-1` | Products: 5)
+*   **Fans** (Handle: `fans` | Products: 0)
+
+### Parent: **Lighting**
+*On the **Lighting** parent category page, show the sub-categories under it:*
+*   **Light Bars** (Handle: `light-bars`)
+*   **Work Lights** (Handle: `work-lights`)
+*   **Camp Lights** (Handle: `camp-lights`)
+*   **Headlights** (Handle: `headlights`)
+*   **Tail Lights** (Handle: `tail-lights`)
+
+#### Sub-Collection: **Light Bars**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Work Lights** (Handle: `work-lights` | Products: 2)
+*   **Camp Lights** (Handle: `camp-lights` | Products: 0)
+*   **Headlights** (Handle: `headlights` | Products: 7)
+*   **Tail Lights** (Handle: `tail-lights` | Products: 5)
+
+#### Sub-Collection: **Work Lights**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Light Bars** (Handle: `light-bars` | Products: 0)
+*   **Camp Lights** (Handle: `camp-lights` | Products: 0)
+*   **Headlights** (Handle: `headlights` | Products: 7)
+*   **Tail Lights** (Handle: `tail-lights` | Products: 5)
+
+#### Sub-Collection: **Camp Lights**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Light Bars** (Handle: `light-bars` | Products: 0)
+*   **Work Lights** (Handle: `work-lights` | Products: 2)
+*   **Headlights** (Handle: `headlights` | Products: 7)
+*   **Tail Lights** (Handle: `tail-lights` | Products: 5)
+
+#### Sub-Collection: **Headlights**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Light Bars** (Handle: `light-bars` | Products: 0)
+*   **Work Lights** (Handle: `work-lights` | Products: 2)
+*   **Camp Lights** (Handle: `camp-lights` | Products: 0)
+*   **Tail Lights** (Handle: `tail-lights` | Products: 5)
+
+#### Sub-Collection: **Tail Lights**
+*On this collection page, show the following options in the suggestion grid:*
+*   **Light Bars** (Handle: `light-bars` | Products: 0)
+*   **Work Lights** (Handle: `work-lights` | Products: 2)
+*   **Camp Lights** (Handle: `camp-lights` | Products: 0)
+*   **Headlights** (Handle: `headlights` | Products: 7)
+
