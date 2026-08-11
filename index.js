@@ -927,7 +927,7 @@ app.post('/webhooks/products-create', verifyShopifyWebhook, async (req, res) => 
     const product = req.body;
     const title = (product.title || '').toLowerCase();
     const tagsStr = (product.tags || '').toLowerCase();
-    const productId = \`gid://shopify/Product/\${product.id}\`;
+    const productId = `gid://shopify/Product/${product.id}`;
 
     const landCruiserKeywords = [
       'landcruiser', 'land cruiser', 'prado', 'fj cruiser',
@@ -944,24 +944,24 @@ app.post('/webhooks/products-create', verifyShopifyWebhook, async (req, res) => 
 
     const tagToAdd = isLC ? 'Land-Cruiser-ad' : 'Other-4WD-ad';
 
-    const mutation = \`
+    const mutation = `
       mutation tagsAdd($id: ID!, $tags: [String!]!) {
         tagsAdd(id: $id, tags: $tags) {
           userErrors { field message }
         }
       }
-    \`;
+    `;
 
     const response = await client.request(mutation, { variables: { id: productId, tags: [tagToAdd] } });
     const errors = response.data.tagsAdd.userErrors;
 
     if (errors && errors.length > 0) {
-      console.error(\`[Webhook] ❌ Error auto-tagging product \${product.id}:\`, errors);
+      console.error(`[Webhook] ❌ Error auto-tagging product ${product.id}:`, errors);
     } else {
-      console.log(\`[Webhook] ✅ Automatically tagged new product \${product.id} with \${tagToAdd}\`);
+      console.log(`[Webhook] ✅ Automatically tagged new product ${product.id} with ${tagToAdd}`);
     }
   } catch (error) {
-    console.error(\`[Webhook] ❌ Exception auto-tagging product:\`, error.message);
+    console.error(`[Webhook] ❌ Exception auto-tagging product:`, error.message);
   }
 });
 
